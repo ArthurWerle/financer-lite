@@ -9,3 +9,9 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     pull_policy: build
+    networks:
+      - back-end
+
+networks:
+  back-end:
+    external: true

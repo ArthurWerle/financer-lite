@@ -1,1 +1,1 @@
-export const BFF_BASE_URL = `/api/bff` 
+export const BFF_BASE_URL = `http://bff-service/api/bff` 
