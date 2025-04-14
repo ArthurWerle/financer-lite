@@ -10,8 +10,8 @@ services:
     restart: unless-stopped
     pull_policy: build
     networks:
-      - back-end
+      - financer-services_back-end
 
 networks:
-  back-end:
+  financer-services_back-end:
     external: true
