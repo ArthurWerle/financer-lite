@@ -1,1 +1,1 @@
-export const BFF_BASE_URL = `http://localhost:8082/api/bff` 
+export const BFF_BASE_URL = `http://192.168.0.7:8082/api/bff` 
