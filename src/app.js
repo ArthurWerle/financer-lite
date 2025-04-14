@@ -5,13 +5,23 @@ const removeDecimals = (value) => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const { data } = await fetch(`${BFF_BASE_URL}/all-values`)
-
-  const month = document.getElementById('month')
-  const week = document.getElementById('week')
-  const day = document.getElementById('day')
-  
-  month.textContent = removeDecimals(data.month)
-  week.textContent = removeDecimals(data.week)
-  day.textContent = removeDecimals(data.day)
+  try {
+    const response = await fetch(`${BFF_BASE_URL}/all-values`)
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`)
+    }
+    
+    const data = await response.json()
+    
+    const month = document.getElementById('month')
+    const week = document.getElementById('week')
+    const day = document.getElementById('day')
+    
+    month.textContent = removeDecimals(data.month)
+    week.textContent = removeDecimals(data.week)
+    day.textContent = removeDecimals(data.day)
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
 }) 
