@@ -8,6 +8,8 @@ services:
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    env_file:
+      - stack.env
     pull_policy: build
     networks:
       - financer-services_back-end
