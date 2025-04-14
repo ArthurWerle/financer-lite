@@ -1,0 +1,24 @@
+/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.currency-value.month:after {
+  content: 'm';
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.currency-value.week:after {
+  content: 'w';
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.currency-value.day:after {
+  content: 'd';
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+
