@@ -1,12 +1,11 @@
 services:
   financer-lite:
-    build: .
+    build:
+      context: .
     ports:
       - "3001:3001"
     volumes:
       - ./src:/app/src
-    environment:
-      - NODE_ENV=production
     restart: unless-stopped
     env_file:
       - stack.env

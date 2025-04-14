@@ -6,9 +6,11 @@ COPY package*.json ./
 
 RUN npm install
 
+COPY stack.env ./
+
 COPY . .
 
-RUN npm run build
+RUN export $(cat stack.env | xargs) && npm run build
 
 RUN npm install -g serve
 
